@@ -1,11 +1,11 @@
 import pandas as pd
-from db import get_connections
+from db import get_engine
 from sqlalchemy import text
 
 
 
 def load_cards():
-    engine, _, _ = get_connections()
+    engine = get_engine()
 
     src_cards = pd.read_sql("select * from cards", engine)
 

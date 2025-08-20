@@ -1,0 +1,9 @@
+2025-08-21 00:56:32.940720 | terminals | data/terminals_03032021.xlsx | 150 rows
+2025-08-21 00:56:32.989019 | passport_blacklist | data/passport_blacklist_03032021.xlsx | 24 rows
+2025-08-21 01:02:58.688253 | terminals | data/terminals_03032021.xlsx | 150 rows
+2025-08-21 01:02:58.753516 | passport_blacklist | data/passport_blacklist_03032021.xlsx | 24 rows
+2025-08-21 01:52:14.246628 | terminals | data/terminals_03032021.xlsx | 150 rows
+2025-08-21 01:52:14.292366 | passport_blacklist | data/passport_blacklist_03032021.xlsx | 24 rows
+2025-08-21 02:02:21.973814 | transactions | data/transactions_03032021.txt | 15780 rows
+2025-08-21 02:02:22.151405 | terminals | data/terminals_03032021.xlsx | 150 rows
+2025-08-21 02:02:22.197254 | passport_blacklist | data/passport_blacklist_03032021.xlsx | 24 rows

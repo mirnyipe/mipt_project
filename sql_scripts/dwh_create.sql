@@ -30,3 +30,6 @@ create table if not exists dwh.dwh_dim_cards (
     effective_to timestamp default timestamp '5999-12-31 23:59:59',
     deleted_flg char(1) default 'N'
 );
+
+
+

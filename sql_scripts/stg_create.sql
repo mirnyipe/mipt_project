@@ -1,3 +1,5 @@
+create schema if not exists stg;
+
 create table if not exists stg.transactions (
     transaction_id bigint,
     transaction_date timestamp,
@@ -19,4 +21,3 @@ create table if not exists stg.passport_blacklist (
     date date,
     passport varchar(20)
 );
-

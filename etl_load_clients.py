@@ -1,11 +1,11 @@
 import pandas as pd
-from db import get_connections
+from db import get_engine
 from sqlalchemy import text
 
 
 
 def load_clients():
-    engine, _, _ = get_connections()
+    engine = get_engine()
 
     src_clients = pd.read_sql("select * from clients", engine)
 
