@@ -1,4 +1,4 @@
--- STAGING
+-- Стэйджинговые таблицы
 create table if not exists stg.stg_transactions(
     trans_id    varchar(128),
     trans_date  timestamp,
@@ -27,7 +27,7 @@ create table if not exists stg.stg_passport_blacklist(
     filename     varchar(256)
 );
 
--- DWH: SCD1
+-- DWH: SCD1 (Карты, аккаунты, клиенты)
 create table if not exists dwh.dwh_dim_cards(
     card_num    varchar(64) primary key,
     account_num varchar(128) not null,
@@ -68,7 +68,7 @@ create table if not exists dwh.dwh_dim_terminals_hist(
     primary key (terminal_id, effective_from)
 );
 
--- DWH: FACTS
+-- DWH: Фактовые таблицы
 create table if not exists dwh.dwh_fact_transactions(
     trans_id    varchar(128) primary key,
     trans_date  timestamp,
@@ -85,7 +85,7 @@ create table if not exists dwh.dwh_fact_passport_blacklist(
     primary key (passport_num, entry_dt)
 );
 
--- META
+-- META-файлы
 create table if not exists meta.meta_load_files(
     source_name  varchar(64),
     file_dt      date,
@@ -100,7 +100,7 @@ create table if not exists meta.meta_last_dates(
     last_dt      date
 );
 
--- REPORT
+-- Витрина
 create table if not exists rep.rep_fraud(
     event_dt   timestamp,
     passport   varchar(32),

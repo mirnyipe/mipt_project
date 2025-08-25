@@ -4,7 +4,7 @@ select
     cl.passport_num,
     cl.last_name || ' ' || cl.first_name || ' ' || coalesce(cl.patronymic,'') as fio,
     cl.phone,
-    'Операция по недействующему договору' as event_type,
+    'Операция при недействующем договоре' as event_type,
     %(report_dt)s::timestamp
 from dwh.dwh_fact_transactions t
 join dwh.dwh_dim_cards c    on c.card_num = t.card_num

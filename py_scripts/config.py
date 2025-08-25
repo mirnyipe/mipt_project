@@ -3,7 +3,7 @@ from pathlib import Path
 from sqlalchemy import create_engine
 from sqlalchemy.engine import Engine
 
-ROOT = Path(__file__).resolve().parents[1]  # корень проекта
+ROOT = Path(__file__).resolve().parents[1]  # корневая папка
 DATA_DIR = ROOT / "data"
 ARCHIVE_DIR = ROOT / "archive"
 

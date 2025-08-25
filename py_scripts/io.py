@@ -63,7 +63,7 @@ def archive_file(path: Path) -> bool:
     print(f">> [ARCHIVE] {src.name} -> {dst.name}")
     return True
 
-# -------- processors ----------
+# Процессор
 def process_terminals(file: Path, file_dt: date):
     print(f">> [TERMINALS] {file.name}")
     df = pd.read_excel(file)

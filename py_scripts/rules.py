@@ -10,9 +10,11 @@ def build_fraud_report_for_day(day_dt: date):
         "report_dt": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
     }
     with ENGINE.begin() as cn:
-        # Чистим день (плейсхолдер без ::date справа)
+
+        # Очистка витрины
         cn.execute(text("delete from rep.rep_fraud where event_dt::date = :day_dt;"), params)
-        # Правила (exec_driver_sql ожидает %(name)s в SQL)
+        
+        # Извлечение правил
         cn.exec_driver_sql(load_sql("rules/rule_1.sql"), params)
         cn.exec_driver_sql(load_sql("rules/rule_2.sql"), params)
         cn.exec_driver_sql(load_sql("rules/rule_3.sql"), params)

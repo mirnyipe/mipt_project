@@ -28,7 +28,8 @@ def df_to_table(df: pd.DataFrame, full_name: str, if_exists="append"):
 def load_dim_scd1_from_public():
     print(">> Load SCD1 from public (upserts)")
     with ENGINE.begin() as cn:
-        # cards
+
+        # Карты
         cn.execute(text("""
             insert into dwh.dwh_dim_cards(card_num, account_num, create_dt)
             select c.card_num, c.account as account_num, current_timestamp
@@ -44,7 +45,7 @@ def load_dim_scd1_from_public():
               and (d.account_num is distinct from s.account_num)
         """))
 
-        # accounts
+        # Аккаунты
         cn.execute(text("""
             insert into dwh.dwh_dim_accounts(account_num, valid_to, client, create_dt)
             select a.account, a.valid_to, a.client, current_timestamp
@@ -62,7 +63,7 @@ def load_dim_scd1_from_public():
                    or d.client  is distinct from s.client)
         """))
 
-        # clients
+        # Клиенты
         cn.execute(text("""
             insert into dwh.dwh_dim_clients(
                 client_id, last_name, first_name, patronymic, date_of_birth,
