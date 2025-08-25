@@ -1,5 +1,5 @@
-create or replace view dwh.V_TERM_CURRENT as
+create or replace view dwh.v_term_current as
 select t.*
-from dwh.DWH_DIM_TERMINALS_HIST t
+from dwh.dwh_dim_terminals_hist t
 where t.deleted_flg = 0
   and current_timestamp between t.effective_from and t.effective_to;
